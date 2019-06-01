@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Sự Kiện Phím</title>
+</head>
+<body onload="docReady()">
+	<form>
+		<img id="bong" src="1823003(1).jpg" style="width: 150px" style="position:absolute;left:0; top:0;">
+	<br>
+	<br>
+	<br>
+	<br>
+	<P>Ấn phím điều hướng di chuyển bóng vào cung thành :))</P>
+	</form>
+	<script>
+		function upArrowPressed(){
+			var element = document.getElementById('bong');
+			element.style.top = parseInt(element.style.top) - 5 + 'px';
+		}
+		function downArrowPressed(){
+			var element = document.getElementById('bong');
+			element.style.top = parseInt(element.style.top) + 5 + 'px';
+		}
+		function leftArrowPressed(){
+			var element = document.getElementById('bong');
+			element.style.left = parseInt(element.style.left) - 5 + 'px';
+		}
+		function rightArrowPressed(){
+			var element = document.getElementById('bong');
+			element.style.left = parseInt(element.style.left) + 5 + 'px';
+		}
+		function dichuyen(evt) {
+		    switch (evt.keyCode) {
+		        case 37:
+		        	console.log('aoit - 37');
+		            leftArrowPressed();
+		            break;
+		        case 39:
+		        	console.log('aoit - 39');
+		            rightArrowPressed();
+		            break;
+		        case 38:
+		        	console.log('aoit - 38');
+		            upArrowPressed();
+		            break;
+		        case 40:
+		        	console.log('aoit - 40');
+		            downArrowPressed();
+		            break;
+		    }
+		}
+		function docReady(){
+			console.log('aoit');
+			window.addEventListener('keydown', dichuyen);
+		}
+	</script>
+	
+</body>
+</html>
